@@ -1,0 +1,27 @@
+﻿@using Eterna.ViewModels
+@model IEnumerable<Hizmetler>
+
+<h2>Şuanki Zaman: @DateTime.Now</h2>
+
+@{ 
+    int yas = 30;
+}
+
+@if (yas > 50)
+{
+    <h1>Yaşlı</h1>
+
+}
+else
+{
+    <h1>Genç</h1>
+}
+
+    <ul>
+        @foreach(Hizmetler item in Model)
+        {
+            <li>@item.Ad</li>
+        }
+
+    </ul>
+@Html.ActionLink("Tıklayınız","Create","Hizmetlers")

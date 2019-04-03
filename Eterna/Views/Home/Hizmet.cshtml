@@ -1,0 +1,9 @@
+﻿@using Eterna.ViewModels
+@model IEnumerable<Hizmetler>
+
+@foreach (Hizmetler item in Model)
+{
+    <li>
+        <a href="#">@item.Ad</a>
+    </li>
+}

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Eterna.ViewModels.Hizmetler>
+@{
+    ViewBag.sayfaBaslik = "Hizmet Yönetimi - Tüm Hizmet";
+    ViewBag.tabloBaslik = "Tüm Hizmetler";
+}
+<p>
+    <a href="@Url.Action("Create","Hizmetlers")" class="btn btn-success">Yeni Kayıt</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ad)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
